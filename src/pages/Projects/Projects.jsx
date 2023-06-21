@@ -19,7 +19,7 @@ import logo1 from "../../assets/img/Progetti/logo1.png";
 import logo2 from "../../assets/img/Progetti/logo2.png";
 import logo3 from "../../assets/img/Progetti/logo3.png";
 import logo4 from "../../assets/img/Progetti/logo4.png";
-import fourMinutes from "../../assets/img/Progetti/fourminutes.jpg";
+import fourMinutes from "../../assets/img/Progetti/fourMinutes.jpg";
 import goldenTeach from "../../assets/img/Progetti/goldenTeach.jpg";
 import cTour from "../../assets/img/Progetti/c-tour.jpg";
 
