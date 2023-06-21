@@ -1,0 +1,13 @@
+.projectCard:hover .overlay{
+    opacity: 1;
+    transform: translate(0);
+}
+.projectCard:hover{
+    transform: translateY(-20px);
+}
+
+.projectCard:hover .project-image {
+
+    opacity : 0;
+
+}
