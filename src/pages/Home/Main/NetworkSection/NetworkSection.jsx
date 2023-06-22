@@ -57,7 +57,7 @@ export const NetworkSection = () => {
       };
       const NetworkHeading = {
         m: "0",
-        fontSize: "3.5rem",
+        fontSize: {lg : '3rem', xl : '3.3rem'},
         borderBottom: "3px solid",
         borderColor: " orange.500",
         alignSelf: "center",
@@ -104,7 +104,7 @@ export const NetworkSection = () => {
               delay : 0.8
             }}>
 
-         <Text lineHeight={"40px"} fontSize={"18px"}>
+         <Text lineHeight={{lg : '35px'}} fontSize={{lg : '1.1rem'}} m={{lg : '50px 0 70px 0'}}>
             Seguendo la nostra continua voglia di scoprire nuove realtà che ci
             portino a crescere, nel corso degli abbiamo collaborato con
             Organizzazioni provenienti da tutta Europa, sviluppando una ampia
@@ -128,7 +128,7 @@ export const NetworkSection = () => {
                   delay : 1
                 }}
               >
-              <UtilityButton value="See more" />
+              {/* <UtilityButton value="See more" /> */}
               <UtilityButton value="Get in touch" />
               </MotionBox>
         </Flex>

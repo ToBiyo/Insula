@@ -34,7 +34,7 @@ export const HeadSectionContent = () => {
   const HeaderText = {
     fontSize: {base : '0.8rem', sm : '0.9rem', md : '1rem', lg : '1.1rem', xl : '1.2rem'},
     lineHeight: "2.5rem",
-    m: "30px 0px",
+    m: "20px 0px",
   };
 
   const MotionBox = chakra(motion.div, {
@@ -87,7 +87,7 @@ export const HeadSectionContent = () => {
         <MotionBox
           initial={{
             opacity : 0,
-            translateY : '200px'
+            translateY : '150px'
           }}
           whileInView={{ 
             opacity: 1,

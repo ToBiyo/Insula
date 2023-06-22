@@ -32,10 +32,15 @@ export const AboutMobile = () => {
 
   const SummaryHeading = {
     m: "100px 0 50px 0",
-    fontSize: "3.5rem",
+    fontSize: {base : '2.4rem', sm : '2.6rem'},
     borderBottom: "3px solid",
     borderColor: " orange.500",
     display: "inline-block",
+  };
+  const DescriptionText = {
+    lineHeight :{base :"25px", sm : '30px'},
+    fontSize :{base :"0.9rem", sm : '1rem', md : '1.1.rem'},
+    margin : {base : '0px 30px 70px 30px',sm : '0px 60px 70px 60px', md : '0px 110px 70px 110px'}
   };
 
   return (
@@ -70,7 +75,7 @@ export const AboutMobile = () => {
           delay: 0.8,
         }}
       >
-        <Text lineHeight={"40px"} fontSize={"18px"} margin={'50px 50px 100px 50px'}>
+        <Text sx={DescriptionText}>
           Da anni prestiamo la nostra professionalità a servizio di Aziende,
           NGO, Enti ed Istituti della PA, al fine di guidarli attraverso il
           mondo di finanziamenti a livello Nazionale (resto al sud, imprese

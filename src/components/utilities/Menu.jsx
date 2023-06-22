@@ -58,10 +58,10 @@ export const MenuComp = () => {
     width: "auto",
     height: "45px",
     display: "inline-block",
-    fontSize: "17px",
+    fontSize: "16px",
     borderRadius: "30px",
     color: "orange.400",
-    fontWeight : '600',
+    fontWeight : 'normal',
     transition: "all ease-in-out 0.4s",
     ":hover": {
       color: "#fff",

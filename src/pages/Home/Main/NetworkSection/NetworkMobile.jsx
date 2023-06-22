@@ -31,13 +31,19 @@ export const NetworkMobile = () => {
         
       };
       const NetworkHeading = {
-        m: "0",
-        fontSize: "3.5rem",
+        m: {base : '100px 0 0 0', sm : '80px 0 0 0'},
+        fontSize: {base : '2.4rem', sm : '2.6rem', md : '2.8rem' },
         borderBottom: "3px solid",
         borderColor: " orange.500",
         alignSelf: "center",
         display : 'inline-block'
-      };  
+      }; 
+      
+      const TextDescription = {
+        fontSize : {base : '0.9rem'},
+        margin : {base : '50px 30px 70px 30px', sm : '50px 60px 70px 60px', md : '50px 110px 70px 110px'},
+        lineHeight : {base : '35px'}
+      }
   return (
       <Flex sx={NetworkText}>
         <MotionBox
@@ -70,7 +76,7 @@ export const NetworkMobile = () => {
             delay: 0.8,
           }}
         >
-          <Text lineHeight={"40px"} fontSize={"18px"} margin={'50px'} textAlign={'cenrter'}>
+          <Text sx={TextDescription}>
             Seguendo la nostra continua voglia di scoprire nuove realtà che ci
             portino a crescere, nel corso degli abbiamo collaborato con
             Organizzazioni provenienti da tutta Europa, sviluppando una ampia
@@ -94,7 +100,7 @@ export const NetworkMobile = () => {
             delay: 1,
           }}
         >
-          <UtilityButton value="See more" />
+          {/* <UtilityButton value="See more" /> */}
           <UtilityButton value="Get in touch" />
         </MotionBox>
       </Flex>

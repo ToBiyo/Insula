@@ -60,21 +60,35 @@ export const ServiceSection = () => {
   ];
   const FlexServices = {
     w: "100vw",
-    h: {base : '100vh',sm : '100vh', md : 'auto', lg : 'auto', xl : '100vh', '2xl' : '100vh'},
-    alignItems: {base : "flex-start", sm : 'bcenter', md : 'center'},
-    bg : '#fff'
+    h: {
+      base: "100vh",
+      sm: "100vh",
+      md: "auto",
+      lg: "auto",
+      xl: "100vh",
+      "2xl": "100vh",
+    },
+    alignItems: { base: "flex-start", sm: "bcenter", md: "center" },
+    bg: "#fff",
   };
 
   const ServicesContainer = {
-    width: {'2xl' : '70%', xl : '70%', lg : 'auto', md : '100%', sm : '100%'},
+    width: { xl: "90%", lg: "auto", md: "100%", sm: "100%" },
     height: "auto",
     flexDir: "row",
     flexWrap: "wrap",
-    margin : {sm : '80px 0', md : '20px 0', lg : '0 0', xl : '0 0', '2xl' : '0 0'},
+    margin: { sm: "80px 0", md: "20px 0", lg: "0 0", xl: "0 0", "2xl": "0 0" },
     zIndex: 1,
-    justifyContent : 'center',
-    alignItems : 'center',
-    gap : {sm : '50px', md : '30px', lg : '20px', xl : '100px', '2xl' : '5px'}
+    justifyContent: "center",
+    alignItems: "center",
+    gap: { sm: "50px", md: "30px", lg: "20px", xl: "100px", "2xl": "5px" },
+  };
+  const ServicesBox = {
+    w: "100vw",
+    h: { sm: "90vh", md: "90vh", lg: "100vh" },
+    flexDir: "column",
+    alignItems: "center",
+    justifyContent: "center",
   };
   const Container = {
     w: "100%",
@@ -82,21 +96,35 @@ export const ServiceSection = () => {
     flexDir: "column",
     justifyContent: "center",
     alignItems: "center",
-    padding: {'2xl': "0px 0 0 100px", xl : "0px 0 0 100px", lg : "0px 0 0 60px", md : "0px 10px 0 60px"},
+    padding: {
+      "2xl": "0px 0 0 100px",
+      xl: "0px 0 0 100px",
+      lg: "0px 0 0 60px",
+      md: "0px 10px 0 60px",
+    },
   };
 
   const HeadText = {
     color: "#fff",
     borderBottom: " 2px solid",
     borderColor: "orange.500",
-    fontSize : {'2xl' : '3rem', xl : '2.8rem', lg : '2.6rem', md : '2.4rem', sm : '2.2rem'},
-    justifySelf : 'center',
-    alignSelf : 'center'
+    fontSize: {
+      "2xl": "3rem",
+      xl: "2.8rem",
+      lg: "2.6rem",
+      md: "2.4rem",
+      sm: "2.2rem",
+    },
+    justifySelf: "center",
+    alignSelf: "center",
   };
   const TextP = {
     color: "#fff",
     marginTop: "30px",
-    fontSize : '16px'
+    fontSize: "16px",
+  };
+  const MobileButton = {
+    display: { sm: "flex", md: "flex", lg: "none", xl: "none", "2xl": "none" },
   };
 
   const MotionBox = chakra(motion.div, {
@@ -105,88 +133,111 @@ export const ServiceSection = () => {
   });
   return (
     <section className="service-section">
-      <Flex w={"100%"} h={"100%"} position={"relative"} flexDir={'column'}>
+      <Flex w={"100%"} h={"100%"} position={"relative"} flexDir={"column"}>
         <ServicesBannerMobile></ServicesBannerMobile>
         <Flex sx={FlexServices}>
-          <Flex sx={ServicesContainer}>
-            <MotionBox
-              initial={{
-                opacity: 0,
-                translateY: "300px",
-              }}
-              whileInView={{
-                opacity: 1,
-                translateY: "0px",
-              }}
-              transition={{
-                duration: 0.6,
-                delay: 0.6,
-              }}
-            >
-              <ServiceCard
-                service={services[0]}
-                key={services[0].title}
-              ></ServiceCard>
-            </MotionBox>
+          <Flex sx={ServicesBox}>
+            <Flex sx={ServicesContainer}>
+              <MotionBox
+                initial={{
+                  opacity: 0,
+                  translateY: "300px",
+                }}
+                whileInView={{
+                  opacity: 1,
+                  translateY: "0px",
+                }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.6,
+                }}
+              >
+                <ServiceCard
+                  service={services[0]}
+                  key={services[0].title}
+                ></ServiceCard>
+              </MotionBox>
 
-            <MotionBox
-              initial={{
-                opacity: 0,
-                translateY: "-300px",
-              }}
-              whileInView={{
-                opacity: 1,
-                translateY: "0px",
-              }}
-              transition={{
-                duration: 0.6,
-                delay: 0.7,
-              }}
-            >
-              <ServiceCard
-                service={services[1]}
-                key={services[1].title}
-              ></ServiceCard>
-            </MotionBox>
+              <MotionBox
+                initial={{
+                  opacity: 0,
+                  translateY: "-300px",
+                }}
+                whileInView={{
+                  opacity: 1,
+                  translateY: "0px",
+                }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.7,
+                }}
+              >
+                <ServiceCard
+                  service={services[1]}
+                  key={services[1].title}
+                ></ServiceCard>
+              </MotionBox>
 
-            <MotionBox
-              initial={{
-                opacity: 0,
-                translateY: "300px",
-              }}
-              whileInView={{
-                opacity: 1,
-                translateY: "0px",
-              }}
-              transition={{
-                duration: 0.6,
-                delay: 0.8,
-              }}
-            >
-              <ServiceCard
-                service={services[2]}
-                key={services[2].title}
-              ></ServiceCard>
-            </MotionBox >
-            <MotionBox initial={{
-                opacity: 0,
-                translateY: "-300px",
-              }}
-              whileInView={{
-                opacity: 1,
-                translateY: "0px",
-              }}
-              transition={{
-                duration: 0.6,
-                delay: 0.9,
-              }}>
-              <ServiceCard
-                service={services[3]}
-                key={services[3].title}
-              ></ServiceCard>
-            </MotionBox>
+              <MotionBox
+                initial={{
+                  opacity: 0,
+                  translateY: "300px",
+                }}
+                whileInView={{
+                  opacity: 1,
+                  translateY: "0px",
+                }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.8,
+                }}
+              >
+                <ServiceCard
+                  service={services[2]}
+                  key={services[2].title}
+                ></ServiceCard>
+              </MotionBox>
+              <MotionBox
+                initial={{
+                  opacity: 0,
+                  translateY: "-300px",
+                }}
+                whileInView={{
+                  opacity: 1,
+                  translateY: "0px",
+                }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.9,
+                }}
+              >
+                <ServiceCard
+                  service={services[3]}
+                  key={services[3].title}
+                ></ServiceCard>
+              </MotionBox>
+            </Flex>
+            <Flex sx={MobileButton}>
+              <MotionBox initial={{
+                  opacity: 0,
+                  translateY: "50px",
+                }}
+                whileInView={{
+                  opacity: 1,
+                  translateY: "0px",
+                }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.9,
+                }}>
+                <UtilityButton value="Get in touch" />
+              </MotionBox>
+            </Flex>
           </Flex>
-          <BackgroundRight color={"#012d5e"} width={{sm : '40%', md : '40%', lg : '40%', xl :'30%', '2xl' : '30%'}}>
+          <BackgroundRight
+            color={"#012d5e"}
+            width={{ sm: "40%", md: "40%", lg: "40%", xl: "30%", "2xl": "30%" }}
+          >
             <MotionBox
               initial={{
                 opacity: 0,
@@ -208,12 +259,11 @@ export const ServiceSection = () => {
                   excepturi facere velit?
                 </Text>
                 <Flex>
-                  <UtilityButton value={"Get in touch"}></UtilityButton>
+                  <UtilityButton value={"Get in touch"} />
                 </Flex>
               </Flex>
             </MotionBox>
           </BackgroundRight>
-          
         </Flex>
       </Flex>
     </section>

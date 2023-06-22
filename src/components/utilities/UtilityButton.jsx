@@ -4,7 +4,8 @@ export const UtilityButton = (props) => {
     const {value, align} = props;
 
     const btn = {
-    fontSize: {base : '0.8rem', sm : '0.9rem', md : '1rem', lg : '1.1rem', xl : '1.2rem'},
+    fontWeight : 'normal',
+    fontSize: {base : '0.8rem', sm : '0.9rem', md : '1rem', lg : '1.1rem'},
      w : {base : '90px',sm : '95px', md : '100px', lg : '110px', xl : '120px' },
      h : '50px', 
      borderRadius : '20px', 
