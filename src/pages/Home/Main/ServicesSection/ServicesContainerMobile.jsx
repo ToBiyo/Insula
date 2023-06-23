@@ -40,7 +40,7 @@ export const ServicesContainerMobile = (props) => {
     setSlides(
       window.innerWidth >= 1000
         ? 3
-        : window.innerWidth >= 800
+        : window.innerWidth >= 765
         ? 2
         : window.innerWidth <= 800
         ? 1
