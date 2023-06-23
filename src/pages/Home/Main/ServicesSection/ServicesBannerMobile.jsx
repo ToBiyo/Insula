@@ -20,11 +20,12 @@ export const ServicesBannerMobile = () => {
 
       const Container = {
         w : '100%',
-        h : {base : '120px', sm : '200px'}, 
+        h : {base : '100px', sm : '180px', md : '200px'},
+        clipPath: 'polygon(0 0, 85% 0%, 100% 100%, 0% 100%)',
         bg : '#012d5e',
-        margin : '0px 0 20px 0',
+        margin : '70px 0 20px 0',
         display : { base : 'flex',sm : 'flex', md : 'flex', lg : 'flex', xl : 'none', '2xl': 'none'},
-        alignItems : 'flex-end',
+        alignItems : { base :'center' ,lg : 'center'},
         justifyContent : 'center'
       }
       const TextContainer = {
@@ -44,9 +45,6 @@ export const ServicesBannerMobile = () => {
         marginBottom : '20px'
       }
 
-      const descriptionText = {
-        display : {base : 'none', sm : 'none', md : 'flex' }
-      }
   return (
     <Flex sx={Container}>
       <MotionBox
@@ -63,12 +61,6 @@ export const ServicesBannerMobile = () => {
             >
               <Flex sx={TextContainer}>
                 <Heading sx={HeadingText}>Our Services</Heading>
-                <Text sx={descriptionText}>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Voluptate cupiditate sequi ipsa quidem, iste magni neque
-                  debitis autem est id saepe quisquam, impedit in, quo fuga ea
-                  excepturi facere velit?
-                </Text>
               </Flex>
             </MotionBox>
     </Flex>

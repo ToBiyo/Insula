@@ -1,11 +1,5 @@
 //chakra
-import {
-  Flex,
-  Heading,
-  Text,
-  chakra,
-  shouldForwardProp,
-} from "@chakra-ui/react";
+import { Flex, Heading, chakra, shouldForwardProp } from "@chakra-ui/react";
 
 //motion
 import { motion, isValidMotionProp } from "framer-motion";
@@ -16,6 +10,7 @@ import { UtilityButton } from "../../../../components/utilities/UtilityButton";
 // section component
 import { ServiceCard } from "./ServiceCard";
 import { ServicesBannerMobile } from "./ServicesBannerMobile";
+import { ServicesContainerMobile } from "./ServicesContainerMobile";
 
 //asssets
 import consult from "../../../../assets/img/Servizi/consult.svg";
@@ -62,33 +57,34 @@ export const ServiceSection = () => {
     w: "100vw",
     h: {
       base: "100vh",
-      sm: "100vh",
+      sm: "auto",
       md: "auto",
       lg: "auto",
       xl: "100vh",
       "2xl": "100vh",
+      
     },
-    alignItems: { base: "flex-start", sm: "bcenter", md: "center" },
-    bg: "#fff",
+    alignItems: { base: "flex-start", md: "flex-start", lg: "flex-start" },
   };
 
   const ServicesContainer = {
-    width: { xl: "90%", lg: "auto", md: "100%", sm: "100%" },
-    height: "auto",
+    width: { xl: "80vw", lg: "100%", md: "100%", sm: "100%" },
+    height: "80vh",
     flexDir: "row",
     flexWrap: "wrap",
-    margin: { sm: "80px 0", md: "20px 0", lg: "0 0", xl: "0 0", "2xl": "0 0" },
     zIndex: 1,
     justifyContent: "center",
-    alignItems: "center",
-    gap: { sm: "50px", md: "30px", lg: "20px", xl: "100px", "2xl": "5px" },
+    alignItems: { md: "flex-start", xl: "center" },
+    display: { base: "none", sm: "none", md: "none", lg: "none", xl: "flex" },
+    
   };
   const ServicesBox = {
     w: "100vw",
-    h: { sm: "90vh", md: "90vh", lg: "100vh" },
+    h: { sm: "auto", md: "auto", lg: "auto", xl : '100vh' },
     flexDir: "column",
     alignItems: "center",
     justifyContent: "center",
+    
   };
   const Container = {
     w: "100%",
@@ -96,32 +92,22 @@ export const ServiceSection = () => {
     flexDir: "column",
     justifyContent: "center",
     alignItems: "center",
-    padding: {
-      "2xl": "0px 0 0 100px",
-      xl: "0px 0 0 100px",
-      lg: "0px 0 0 60px",
-      md: "0px 10px 0 60px",
-    },
   };
 
   const HeadText = {
     color: "#fff",
-    borderBottom: " 2px solid",
-    borderColor: "orange.500",
     fontSize: {
       "2xl": "3rem",
-      xl: "2.8rem",
+      xl: "2.6rem",
       lg: "2.6rem",
       md: "2.4rem",
       sm: "2.2rem",
     },
-    justifySelf: "center",
-    alignSelf: "center",
-  };
-  const TextP = {
-    color: "#fff",
-    marginTop: "30px",
-    fontSize: "16px",
+    borderBottom: "2px solid",
+    borderColor: "orange.400",
+    textAlign: "center",
+    marginLeft: { lg: "65px", xl: "65px" },
+    marginRight: "20px",
   };
   const MobileButton = {
     display: { sm: "flex", md: "flex", lg: "none", xl: "none", "2xl": "none" },
@@ -133,10 +119,11 @@ export const ServiceSection = () => {
   });
   return (
     <section className="service-section">
-      <Flex w={"100%"} h={"100%"} position={"relative"} flexDir={"column"}>
-        <ServicesBannerMobile></ServicesBannerMobile>
+      <Flex w={"100%"} h={"100vh"} position={"relative"} flexDir={"column"} /* overflow={'hidden'} */>
+        <ServicesBannerMobile />
         <Flex sx={FlexServices}>
           <Flex sx={ServicesBox}>
+            <ServicesContainerMobile services={services} />
             <Flex sx={ServicesContainer}>
               <MotionBox
                 initial={{
@@ -218,7 +205,8 @@ export const ServiceSection = () => {
               </MotionBox>
             </Flex>
             <Flex sx={MobileButton}>
-              <MotionBox initial={{
+              <MotionBox
+                initial={{
                   opacity: 0,
                   translateY: "50px",
                 }}
@@ -229,14 +217,18 @@ export const ServiceSection = () => {
                 transition={{
                   duration: 0.6,
                   delay: 0.9,
-                }}>
-                <UtilityButton value="Get in touch" />
+                }}
+              >
+                {<UtilityButton value="Get in touch" />}
               </MotionBox>
             </Flex>
+            {<Flex display={{base : 'none', lg : 'flex'}}>
+              {<UtilityButton value="Get in touch" />}
+            </Flex>}
           </Flex>
           <BackgroundRight
             color={"#012d5e"}
-            width={{ sm: "40%", md: "40%", lg: "40%", xl: "30%", "2xl": "30%" }}
+            width={{ sm: "40%", md: "40%", lg: "40%", xl: "20%", "2xl": "30%" }}
           >
             <MotionBox
               initial={{
@@ -252,15 +244,6 @@ export const ServiceSection = () => {
             >
               <Flex sx={Container}>
                 <Heading sx={HeadText}>Our Services</Heading>
-                <Text sx={TextP}>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Voluptate cupiditate sequi ipsa quidem, iste magni neque
-                  debitis autem est id saepe quisquam, impedit in, quo fuga ea
-                  excepturi facere velit?
-                </Text>
-                <Flex>
-                  <UtilityButton value={"Get in touch"} />
-                </Flex>
               </Flex>
             </MotionBox>
           </BackgroundRight>

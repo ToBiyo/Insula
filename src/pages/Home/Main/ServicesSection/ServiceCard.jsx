@@ -12,8 +12,8 @@ export const ServiceCard = (props) => {
 
   const Card = {
     position: "relative",
-    w: { base : '150px', sm : '250px', md : "250px", xl : '270px'},
-    h: {base : '200px', sm : '340px', lg : '360px' },
+    w: {base : '240px', md : "270px", xl : '235px', '2xl' : '260px'},
+    h: {base : '360px', sm : '370px', md : '400px', lg : '360px' },
     flexDir: 'column',
     color: "#000",
     alignItems : 'center',
@@ -27,10 +27,10 @@ export const ServiceCard = (props) => {
     ":hover": {
       transform: "scale(1.02)",
     },
-    margin : {base : '10px',lg : '20px 70px', xl : ' 20px 10px'}
+    margin : {base : '10px',lg : '0px 10px', xl : '10px'}
   };
   const serviceImage = {
-    h : {base : '90px', md : '110px', lg : '140px'}
+    h : { lg : '140px'}
   }
   const HeadingBox = {
     w: "100%",
@@ -51,7 +51,7 @@ export const ServiceCard = (props) => {
     flexDir: "column",
     textAlign: "center",
     padding: "5px 0",
-    display : {base : 'none', sm : 'none', md : 'none', lg : 'flex'}
+    display : {base : 'flex', lg : 'flex'}
   };
 
   const subservicesContent = subservices.map((subservice) => (

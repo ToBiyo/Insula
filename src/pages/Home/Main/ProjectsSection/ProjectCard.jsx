@@ -8,18 +8,17 @@ export const ProjectCard = (props) => {
   const { src, heading } = props;
 
   const Border = {
-    width: "290px",
-    height: "365px",
+    width: { sm : '250px', lg : '230px', '2xl' : '250px'},
+    height: {sm : '340px', lg :'340px', '2xl' : '360px'},
     alignItems: "center",
     justifyContent: "center",
-    /* bg : 'linear-gradient(to bottom, orange, #fff)', */
-    margin: "20px 0px",
+    margin: {lg :'10px 20px', xl : '20px 3px', '2xl' : '20px 8px'},
     borderRadius: "20px 0",
     transition: "all ease-in-out 0.6s",
   };
   const ProjectCard = {
-    width: "260px",
-    height: "360px",
+    width: {  sm : '250px', lg : '230px', '2xl' : '250px'},
+    height: {sm : '340px', lg :'340px', '2xl' : '360px'},
     flexDir: "column",
     bg: "linear-gradient(to bottom, orange, #fff, #fff)",
     justifyContent: "center",
@@ -40,7 +39,7 @@ export const ProjectCard = (props) => {
     height: "380px",
     flexDir: "column",
 
-    padding: "10px",
+    padding: "10px 15px",
     alignItems: "center",
     justifyContent: "center",
     borderRadius: "20px 0",
@@ -58,7 +57,7 @@ export const ProjectCard = (props) => {
           <Text
             color="#000"
             margin={" 30px 10px"}
-            fontSize={"15px"}
+            fontSize={"0.9rem"}
             lineHeight={"25px"}
           >
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id, eum

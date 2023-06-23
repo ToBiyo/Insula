@@ -31,7 +31,7 @@ export const ProjectSection = () => {
 
   const ProjectsContainer = {
     w: "100%",
-    h: {sm : 'auto', md : 'auto', lg : '100vh', xl : '100vh', '2xl' : '100vh'},
+    h: {sm : '100vh', md : '100vh', lg : '100vh', xl : '100vh', '2xl' : '100vh'},
     flexDir: "row",
     justifyContent: "space-around",
     alignItems: "center",
@@ -40,7 +40,7 @@ export const ProjectSection = () => {
   };
 
   const ProjectsBox = {
-    w: {'2xl' : '70%', xl : '70%', lg : 'auto', md : '100%', sm : '100%'},
+    w: {'2xl' : '72%', xl : '74%', lg : 'auto', md : '100%', sm : '100%'},
     minHeight: "auto",
     flexDir: "row",
     flexWrap: "wrap",
@@ -149,7 +149,7 @@ export const ProjectSection = () => {
           <ProjectCard src={logo4} heading={"Text"}></ProjectCard>
         </MotionBox>
       </Flex>
-      <BackgroundRight color={"#012d5e"} width={{sm : '50%', md : '50%', lg : '60%', xl :'30%', '2xl' : '30%'}}>
+      <BackgroundRight color={"#012d5e"} width={{sm : '50%', md : '50%', lg : '60%', xl :'26%', '2xl' : '30%'}}>
       <MotionBox initial={{
         scale : 0
       }}
@@ -163,15 +163,15 @@ export const ProjectSection = () => {
       >
         
       <Flex sx={ProjectsHeadingBox}>
-        <Heading borderBottom={"3px solid #ed8936"} fontSize={"3.2rem"}>
+        <Heading borderBottom={"3px solid #ed8936"} fontSize={{xl : '2.8rem', '2xl': "3.2rem"}}>
           Projects
         </Heading>
-        <Text margin={"40px"}>
+        {/* <Text margin={{xl : '40px 0'}}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
           iste enim obcaecati repudiandae. Alias cupiditate dignissimos at in
           dolor temporibus libero culpa excepturi, tempora labore quod molestiae
           nemo nihil nesciunt!
-        </Text>
+        </Text> */}
         <Flex>
           <UtilityButton value="Get in touch" />
         </Flex>
