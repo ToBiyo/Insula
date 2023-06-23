@@ -43,8 +43,8 @@ export const MenuComp = () => {
       "2xl": "none",
     },
     bg: "none",
-    color: "orange.400",
-    fontSize: "25px",
+    color: "#fff",
+    fontSize: "30px",
     ":hover": {
       bg: "none",
     },
