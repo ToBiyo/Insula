@@ -1,3 +1,6 @@
+//react
+import { useEffect } from "react";
+import { useState } from "react";
 //chakra
 import { Flex } from "@chakra-ui/react";
 
@@ -15,7 +18,7 @@ import { ServiceCard } from "./ServiceCard";
 
 export const ServicesContainerMobile = (props) => {
   const { services } = props;
-  console.log(services);
+  const [slides, setSlides] = useState(0);
 
   const ServicesSlider = {
     display: { base: "flex", xl: "none" },
@@ -24,15 +27,37 @@ export const ServicesContainerMobile = (props) => {
     flexDir: "column",
     alignItems: "center",
     justifyContent: "center",
-    
   };
 
   const sliderBox = {
-    w: '100%',
-    h : '60vh',
-    justifyContent : 'center',
-    alignItems : 'center'
-  }
+    w: { base: "100%", md: "auto" },
+    h: "60vh",
+    justifyContent: "center",
+    alignItems: "center",
+  };
+
+  const setSlidesPerview = () => {
+    setSlides(
+      window.innerWidth >= 1000
+        ? 3
+        : window.innerWidth >= 800
+        ? 2
+        : window.innerWidth <= 800
+        ? 1
+        : 0
+    );
+  };
+  useEffect(() => {
+    //Initially set the amount of slides on page load
+    setSlidesPerview();
+    // Add the event listner on component mount
+    window.addEventListener("resize", setSlidesPerview);
+
+    // Remove the listner when component unmounts
+    return () => {
+      window.removeEventListener("resize", setSlidesPerview);
+    };
+  }, []);
 
   return (
     <Flex sx={ServicesSlider}>
@@ -40,7 +65,7 @@ export const ServicesContainerMobile = (props) => {
         pagination={false}
         navigation={true}
         modules={[Pagination, Navigation]}
-        slidesPerView={1}
+        slidesPerView={slides}
         style={{ width: "95%" }}
         allowTouchMove={false}
         speed={600}
@@ -54,26 +79,26 @@ export const ServicesContainerMobile = (props) => {
           </Flex>
         </SwiperSlide>
         <SwiperSlide>
-        <Flex sx={sliderBox}>
+          <Flex sx={sliderBox}>
             <ServiceCard
-              service={services[0]}
-              key={services[0].title}
+              service={services[1]}
+              key={services[1].title}
             ></ServiceCard>
           </Flex>
         </SwiperSlide>
         <SwiperSlide>
-        <Flex sx={sliderBox}>
+          <Flex sx={sliderBox}>
             <ServiceCard
-              service={services[0]}
-              key={services[0].title}
+              service={services[2]}
+              key={services[2].title}
             ></ServiceCard>
           </Flex>
         </SwiperSlide>
         <SwiperSlide>
-        <Flex sx={sliderBox}>
+          <Flex sx={sliderBox}>
             <ServiceCard
-              service={services[0]}
-              key={services[0].title}
+              service={services[3]}
+              key={services[3].title}
             ></ServiceCard>
           </Flex>
         </SwiperSlide>
