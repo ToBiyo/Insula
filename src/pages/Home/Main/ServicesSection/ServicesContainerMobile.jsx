@@ -69,6 +69,8 @@ export const ServicesContainerMobile = (props) => {
         style={{ width: "95%" }}
         allowTouchMove={false}
         speed={600}
+        initialSlide={slides}
+        loop={true}
       >
         <SwiperSlide>
           <Flex sx={sliderBox}>

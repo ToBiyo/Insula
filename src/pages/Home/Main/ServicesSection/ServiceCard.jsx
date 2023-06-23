@@ -12,7 +12,7 @@ export const ServiceCard = (props) => {
 
   const Card = {
     position: "relative",
-    w: {base : '240px', md : "270px", xl : '235px', '2xl' : '260px'},
+    w: {base : '270px', md : "270px", xl : '235px', '2xl' : '260px'},
     h: {base : '360px', sm : '370px', md : '400px', lg : '360px' },
     flexDir: 'column',
     color: "#000",
@@ -21,8 +21,8 @@ export const ServiceCard = (props) => {
     transition: "all ease-in-out 0.5s",
     cursor: "pointer",
     overflow: "hidden",
-    borderRadius: "40px 0",
-    boxShadow: "0 0 15px #555",
+    borderRadius: {base : "0", sm : "40px 0"},
+    boxShadow: {base : "", sm : "0 0 15px #555"},
     bg: "linear-gradient(to bottom, #012d5e, rgb(0,0,0,0), #fff)",
     ":hover": {
       transform: "scale(1.02)",
@@ -40,7 +40,7 @@ export const ServiceCard = (props) => {
   const ServiceHeading = {
     width: "90%",
     fontWeight: "500",
-    fontSize: {base : '0.9rem', sm : '1.1rem'},
+    fontSize: {base : '1.1rem', sm : '1.1rem'},
     color: "orange.400",
     textAlign: "center",
   };
@@ -55,7 +55,7 @@ export const ServiceCard = (props) => {
   };
 
   const subservicesContent = subservices.map((subservice) => (
-    <Text className="listItem" key={subservice} margin={"5px 0"} fontSize={"14px"}>
+    <Text className="listItem" key={subservice} margin={"5px 0"} fontSize={{base : '0.8rem', md : '0.9rem'}}>
       <CheckIcon color={"orange.400"} width={"15px"} margin={" 0 5px"} />
       {subservice}
     </Text>
