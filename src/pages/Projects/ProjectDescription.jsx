@@ -11,11 +11,9 @@ import {
 //motion
 import { motion, isValidMotionProp } from "framer-motion";
 
-//components
-import { UtilityButton } from "../../components/utilities/UtilityButton";
 
 export const ProjectDescription = (props) => {
-  const { title, logo, subtitle, img, description } = props.project;
+  const { logo, subtitle, img, description } = props.project;
 
   const MotionBox = chakra(motion.div, {
     shouldForwardProp: (prop) =>
@@ -44,13 +42,12 @@ export const ProjectDescription = (props) => {
 
   return (
     <Flex sx={projectContainer}>
-      {/* <Heading color={'orange.400'}>{title}</Heading> */}
       <MotionBox
         initial={{
-          opacity: 0,
+          scale: 0,
         }}
         whileInView={{
-          opacity: 1,
+          scale: 1,
         }}
         transition={{
           duration: 0.6,
@@ -67,7 +64,7 @@ export const ProjectDescription = (props) => {
           opacity: 1,
         }}
         transition={{
-          duration: 0.6,
+          duration: 0.8,
           delay: 0.6,
         }}
       >
@@ -80,7 +77,7 @@ export const ProjectDescription = (props) => {
           <MotionBox 
           initial={{
             opacity : 0, 
-            translateX : '-200px'
+            translateX : '-100px'
           }}
           whileInView={{
             opacity : 1, 
@@ -98,7 +95,7 @@ export const ProjectDescription = (props) => {
         <MotionBox
         initial={{
             opacity : 0, 
-            translateX : '200px'
+            translateX : '100px'
           }}
           whileInView={{
             opacity : 1, 

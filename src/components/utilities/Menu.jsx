@@ -8,7 +8,7 @@ import { HamburgerIcon } from "@chakra-ui/icons";
 import { CloseIcon } from "@chakra-ui/icons";
 
 export const MenuComp = () => {
-  const [display, changeDisplay] = useState("none");
+  const [translate, changeTranslate] = useState("-100%");
 
   const LinkContainer = {
     w: {
@@ -52,6 +52,28 @@ export const MenuComp = () => {
       bg: "none",
     },
   };
+  const closeButton = {
+    position : 'absolute',
+    top : '20px',
+    right : '20px',
+    display: {
+      base: "flex",
+      sm: "flex",
+      md: "flex",
+      lg: "none",
+      xl: "none",
+      "2xl": "none",
+    },
+    bg: "none",
+    color: "#fff",
+    fontSize: "20px",
+    ":hover": {
+      bg: "none",
+    },
+    ":focus": {
+      bg: "none",
+    },
+  };
 
   const MenuButton = {
     bg: "none",
@@ -60,26 +82,29 @@ export const MenuComp = () => {
     display: "inline-block",
     fontSize: "16px",
     borderRadius: "30px",
-    color: "orange.400",
+    color: {base : '#fff', xl : 'orange.400'},
     fontWeight : 'normal',
     transition: "all ease-in-out 0.4s",
     ":hover": {
       color: "#fff",
       bg: "orange.400",
     },
+    
   };
 
   const fullpageMenuBox = {
-    display: display,
+    display: "flex",
     position: "absolute",
     left: 0,
     top: 0,
-    bg: "blue.900",
+    bg: "#012d5e",
     width: "100vw",
     h: "100vh",
     flexDir: "column",
     justifyContent: "center !important",
     alignItems: "center",
+    transition : 'all ease-in-out 0.4s',
+    transform : `translateX(${translate})`
   };
 
   return (
@@ -105,7 +130,8 @@ export const MenuComp = () => {
       <Button
         sx={burgerButton}
         onClick={() => {
-          changeDisplay("flex");
+          /* changeDisplay("flex"); */
+          changeTranslate("0px");
         }}
       >
         <HamburgerIcon />
@@ -113,7 +139,7 @@ export const MenuComp = () => {
 
       <Flex sx={fullpageMenuBox}>
         <Flex justifyContent={"flex-end"} minWidth={"300px"}>
-          <Button sx={burgerButton} onClick={() => changeDisplay("none")}>
+          <Button sx={closeButton} onClick={() => changeTranslate("-100%")}>
             <CloseIcon margin={"0 20px"} color={"#fff"}></CloseIcon>
           </Button>
         </Flex>
@@ -121,7 +147,9 @@ export const MenuComp = () => {
           <Button
             sx={MenuButton}
             onClick={() => {
-              changeDisplay("none");
+              changeTranslate('-100%');
+              
+              
             }}
           >
             Home
@@ -131,7 +159,8 @@ export const MenuComp = () => {
           <Button
             sx={MenuButton}
             onClick={() => {
-              changeDisplay("none");
+              changeTranslate('-100%');
+              
             }}
           >
             Services
@@ -141,7 +170,8 @@ export const MenuComp = () => {
           <Button
             sx={MenuButton}
             onClick={() => {
-              changeDisplay("none");
+              changeTranslate('-100%');
+              
             }}
           >
             About
@@ -151,7 +181,8 @@ export const MenuComp = () => {
           <Button
             sx={MenuButton}
             onClick={() => {
-              changeDisplay("none");
+              changeTranslate('-100%');
+              
             }}
           >
             Network
@@ -161,7 +192,8 @@ export const MenuComp = () => {
           <Button
             sx={MenuButton}
             onClick={() => {
-              changeDisplay("none");
+              changeTranslate('-100%');
+              
             }}
           >
             Projects

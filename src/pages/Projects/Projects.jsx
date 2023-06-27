@@ -82,20 +82,20 @@ export const Projects = (props) => {
     flexDir : 'column'
   }
   const SlideBox = {
-    w: "70vw",
+    w: "80vw",
     h: "85%",
   };
 
   return (
     <Flex sx={headerSection}>
-      <BackgroundLeft width={"30vw"} color={"#012d5e"} opacity={1} zIndex={1}>
+      <BackgroundLeft width={"20vw"} color={"#012d5e"} opacity={1} zIndex={1}>
         <Flex sx={HeadingBox}>
           <Heading
             color={"#fff"}
             fontSize={"3.4rem"}
             borderBottom={"3px solid"}
             borderColor={"orange.400"}
-            marginLeft={"5vw"}
+            marginLeft={"2.5vw"}
           >
             Projects
           </Heading>

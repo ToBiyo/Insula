@@ -13,7 +13,8 @@ import { BackgroundRight } from "../utilities/BackgroundRight";
 
 //section component
 import { ContactForm } from "./ContactForm";
-import { MenuComp } from "../utilities/Menu";
+import { FooterMobileBanner } from "./FooterMobileBanner";
+import { MobileFooter } from "./MobileFooter";
 //assets
 import logo from "../../assets/img/logo.svg";
 //style
@@ -22,6 +23,11 @@ import "./Footer.css";
 export const Footer = () => {
   const FooterContainer = {
     w: "100vw",
+    h :'100vh',
+    flexDir : {base : 'column', xl : 'row'},
+    justifyContent : 'space-between',
+    alignItems : 'center',
+    position : 'relative'
   };
   const footerBox = {
     w: "70%",
@@ -51,8 +57,10 @@ export const Footer = () => {
   const copyrightBox = {};
   return (
     <Flex sx={FooterContainer}>
+      <FooterMobileBanner></FooterMobileBanner>
       <ContactForm></ContactForm>
-      <BackgroundRight color={"#012d5e"} width={"50vw"}>
+      <MobileFooter></MobileFooter>
+      <BackgroundRight color={"#012d5e"} width={"30vw"}>
         <footer
           style={{
             width: "100%",

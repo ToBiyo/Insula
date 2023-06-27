@@ -6,10 +6,10 @@ import { motion, isValidMotionProp } from "framer-motion";
 //utilities
 import { BackgroundRight } from "../../../../components/utilities/BackgroundRight";
 import { UtilityButton } from "../../../../components/utilities/UtilityButton";
+import { MobileBanner } from "../../../../components/utilities/MobileBanner";
 
 // section component
 import { ServiceCard } from "./ServiceCard";
-import { ServicesBannerMobile } from "./ServicesBannerMobile";
 import { ServicesContainerMobile } from "./ServicesContainerMobile";
 
 //asssets
@@ -56,7 +56,7 @@ export const ServiceSection = () => {
   const FlexServices = {
     w: "100vw",
     h: {
-      base: "100vh",
+      base: "auto",
       sm: "auto",
       md: "auto",
       lg: "auto",
@@ -120,7 +120,7 @@ export const ServiceSection = () => {
   return (
     <section className="service-section">
       <Flex w={"100%"} h={"100vh"} position={"relative"} flexDir={"column"} /* overflow={'hidden'} */>
-        <ServicesBannerMobile />
+        <MobileBanner heading="Services"/>
         <Flex sx={FlexServices}>
           <Flex sx={ServicesBox}>
             <ServicesContainerMobile services={services} />

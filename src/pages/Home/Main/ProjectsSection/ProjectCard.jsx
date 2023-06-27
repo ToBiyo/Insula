@@ -1,24 +1,24 @@
 //chakra
-import { Flex, Image, Button, Text, Heading } from "@chakra-ui/react";
+import { Flex, Image,Text} from "@chakra-ui/react";
 
 //style
 import "./ProjectCard.css";
 
 export const ProjectCard = (props) => {
-  const { src, heading } = props;
+  const { project } = props;
 
   const Border = {
-    width: { sm : '250px', lg : '230px', '2xl' : '250px'},
-    height: {sm : '340px', lg :'340px', '2xl' : '360px'},
+    width: { base: "260px", lg: "260px", "2xl": "250px" },
+    height: { base: "340px", lg: "340px", "2xl": "360px" },
     alignItems: "center",
     justifyContent: "center",
-    margin: {lg :'10px 20px', xl : '20px 3px', '2xl' : '20px 8px'},
-    borderRadius: "20px 0",
+    margin: { md: "20px 3px", "2xl": "20px 8px" },
+    borderRadius: { base: "0 0", sm: "20px 0" },
     transition: "all ease-in-out 0.6s",
   };
   const ProjectCard = {
-    width: {  sm : '250px', lg : '230px', '2xl' : '250px'},
-    height: {sm : '340px', lg :'340px', '2xl' : '360px'},
+    width: { base: "250px", lg: "240px", "2xl": "250px" },
+    height: { base: "340px", lg: "340px", "2xl": "360px" },
     flexDir: "column",
     bg: "linear-gradient(to bottom, orange, #fff, #fff)",
     justifyContent: "center",
@@ -38,7 +38,6 @@ export const ProjectCard = (props) => {
     width: "280px",
     height: "380px",
     flexDir: "column",
-
     padding: "10px 15px",
     alignItems: "center",
     justifyContent: "center",
@@ -50,31 +49,24 @@ export const ProjectCard = (props) => {
   return (
     <Flex sx={Border} className="border">
       <Flex sx={ProjectCard} className="projectCard" color={"#fff"}>
-        <Image src={src} margin={"30px 0px"} w={"200px"} transition={"all ease-in-out 0.5s"} className = 'project-image'></Image>
+        <Image
+          src={project.logo}
+          margin={"30px 0px"}
+          w={"200px"}
+          transition={"all ease-in-out 0.5s"}
+          className="project-image"
+        ></Image>
 
         <Flex sx={Overlay} className="overlay">
-          <Heading fontSize={"1.6rem"}>Title</Heading>
           <Text
-            color="#000"
+            color="#555"
             margin={" 30px 10px"}
-            fontSize={"0.9rem"}
-            lineHeight={"25px"}
+            fontSize={"1.2rem"}
+            fontWeight={"normal"}
+            lineHeight={"35px"}
           >
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id, eum
-            incidunt velit eveniet repellat quos asperiores totam voluptatum rem
-            vel quia animi, nesciunt dolor repudiandae culpa autem voluptate aut
-            perferendis. Lorem ipsum, dolor sit amet consectetur adipisicing
-            elit.
+            {project.description}
           </Text>
-          <Button
-            bg={"orange.400"}
-            color={"#fff"}
-            h={"40px"}
-            w={"100px"}
-            borderRadius={"20px"}
-          >
-            See more
-          </Button>
         </Flex>
       </Flex>
     </Flex>
